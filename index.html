@@ -3,22 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ksd77kr-png</title>
+  <meta name="color-scheme" content="dark">
+  <title>Sukdong (Sandy) Kim | System S/W Engineer</title>
+  <meta name="description" content="Responsive personal portfolio and snake game for Sukdong (Sandy) Kim.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#home">Skip to content</a>
+
   <header class="site-header">
     <div class="brand">
-      <span class="brand-mark">K</span>
+      <span class="brand-mark" aria-hidden="true">SK</span>
       <div>
-        <p class="eyebrow">Personal Website</p>
-        <h1>ksd77kr-png</h1>
+        <p class="eyebrow">System S/W Engineer</p>
+        <p class="brand-name">Sukdong (Sandy) Kim</p>
       </div>
     </div>
-    <nav class="site-nav" aria-label="Primary">
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span class="nav-toggle-label">Menu</span>
+    </button>
+
+    <nav id="primary-nav" class="site-nav" aria-label="Primary">
       <a href="#home">Home</a>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
       <a href="#games">Games</a>
@@ -26,39 +41,265 @@
   </header>
 
   <main>
-    <section id="home" class="panel hero">
-      <p class="eyebrow">Welcome</p>
-      <h2>Professional profile landing page</h2>
-      <p class="lead">A responsive static foundation for a personal site and future snake game.</p>
+    <section id="home" class="section hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Responsive portfolio + game</p>
+        <h1>Building secure systems from bootloader bring-up to Linux kernel and Android HAL.</h1>
+        <p class="lede">
+          17+ years of system software work across Qualcomm BSP porting, bare-board bring-up, TrustZone and AVF security,
+          and performance tuning for Samsung mobile platforms.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">View selected work</a>
+          <a class="button button-secondary" href="#games">Play snake</a>
+        </div>
+      </div>
+
+      <aside class="hero-aside">
+        <div class="stat-grid">
+          <article>
+            <strong>17+</strong>
+            <span>years system SW</span>
+          </article>
+          <article>
+            <strong>5</strong>
+            <span>U.S. patent filings</span>
+          </article>
+          <article>
+            <strong>2024</strong>
+            <span>AWS Security Specialty</span>
+          </article>
+          <article>
+            <strong>TrustZone</strong>
+            <span>& AVF security focus</span>
+          </article>
+        </div>
+      </aside>
     </section>
 
-    <section id="about" class="panel">
-      <h2>About</h2>
-      <p>Profile content will be shaped from the provided CV in the next loop.</p>
+    <section id="about" class="section panel-grid">
+      <article class="panel">
+        <p class="eyebrow">About</p>
+        <h2>Who I am</h2>
+        <p>
+          I am a system software engineer based in Suwon City, Gyeonggi-do, Republic of Korea, with a background in
+          smartphone BSP bring-up, Linux kernel device drivers, Android daemon development, and secure credential handling.
+        </p>
+      </article>
+      <article class="panel">
+        <p class="eyebrow">Focus</p>
+        <h2>What I work on</h2>
+        <ul class="list">
+          <li>Bootloader to Linux kernel bring-up and debugging</li>
+          <li>HAL, AIDL, and Android daemon integration</li>
+          <li>Security work around Knox, TrustZone, and AVF</li>
+          <li>Performance tuning, tracing, and board-level validation</li>
+        </ul>
+      </article>
     </section>
 
-    <section id="projects" class="panel">
-      <h2>Projects</h2>
-      <p>Project highlights will be filled in after content review.</p>
+    <section id="experience" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Experience</p>
+        <h2>Selected career timeline</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <p class="timeline-meta">2023 - Present | SAMSUNG</p>
+          <h3>Knox Matrix Project, Secure Enclave Developer and TG Leader</h3>
+          <p>Developed secure storage for confidential information within TrustZone and AVF, while coordinating interfaces between App TG and Server TZ.</p>
+        </article>
+        <article class="timeline-item">
+          <p class="timeline-meta">2020 - 2022 | SAMSUNG</p>
+          <h3>Flexible Display Form Factor BSP TG Leader</h3>
+          <p>Supported rollable smartphone bring-up with Qualcomm SDM845, sensor and motor drivers, HAL layers, and panel roll-degree patent work.</p>
+        </article>
+        <article class="timeline-item">
+          <p class="timeline-meta">2013 - 2019 | SAMSUNG</p>
+          <h3>Galaxy S4 to S20 BSP Engineer</h3>
+          <p>Ported Qualcomm BSPs across multiple Galaxy S generations, handled first boot, ROM writing, Trace32 debugging, and performance daemons.</p>
+        </article>
+        <article class="timeline-item">
+          <p class="timeline-meta">2010 - 2012 | SAMSUNG</p>
+          <h3>Galaxy S1 to S3 Linux Kernel Device Driver Developer</h3>
+          <p>Implemented PMIC and MUIC device drivers for the Samsung Galaxy S platform.</p>
+        </article>
+      </div>
     </section>
 
-    <section id="skills" class="panel">
-      <h2>Skills</h2>
-      <p>Skills summary placeholder.</p>
+    <section id="projects" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Projects</p>
+        <h2>Verified project highlights</h2>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-tag">Knox Matrix</span>
+          <h3>Secure credential storage</h3>
+          <p>Built a secure enclave module for confidential information managed by Knox Matrix in TrustZone and AVF.</p>
+        </article>
+        <article class="card">
+          <span class="card-tag">Flexible display</span>
+          <h3>Rollable smartphone bring-up</h3>
+          <p>Worked on SDM845 platform bring-up, sensor/motor device drivers, HAL integration, and form-factor validation.</p>
+        </article>
+        <article class="card">
+          <span class="card-tag">Galaxy S series</span>
+          <h3>Platform bring-up and tuning</h3>
+          <p>Ported BSPs across Galaxy S generations, supported ROM writing, and improved runtime behavior with daemon work.</p>
+        </article>
+      </div>
     </section>
 
-    <section id="contact" class="panel">
-      <h2>Contact</h2>
-      <p>Contact details placeholder.</p>
+    <section id="research" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Research</p>
+        <h2>Patents and technical depth</h2>
+      </div>
+      <div class="panel-grid">
+        <article class="panel">
+          <h3>Patent work</h3>
+          <p>Filed five U.S. patents during the flexible display program, plus an additional patent related to roll-degree sensing.</p>
+        </article>
+        <article class="panel">
+          <h3>Security systems</h3>
+          <p>Recent work centers on Samsung Knox credential security using TrustZone and AVF for protected execution paths.</p>
+        </article>
+        <article class="panel">
+          <h3>Instrumentation</h3>
+          <p>Hands-on debugging includes Trace32 and SYSTRACE, with strong attention to performance, boot stability, and hardware bring-up.</p>
+        </article>
+      </div>
     </section>
 
-    <section id="games" class="panel games-panel">
-      <h2>Games</h2>
-      <p>Game space is ready for the snake experience in a later loop.</p>
-      <div class="game-slot" aria-hidden="true"></div>
+    <section id="skills" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Skills</p>
+        <h2>Tools, languages, and credentials</h2>
+      </div>
+      <div class="skills-wrap">
+        <article class="panel">
+          <h3>Languages</h3>
+          <div class="chip-row">
+            <span class="chip">C</span>
+            <span class="chip">C++</span>
+            <span class="chip">Python</span>
+            <span class="chip">Linux Kernel</span>
+            <span class="chip">UEFI</span>
+          </div>
+        </article>
+        <article class="panel">
+          <h3>Platform stack</h3>
+          <div class="chip-row">
+            <span class="chip">Android HAL</span>
+            <span class="chip">AIDL</span>
+            <span class="chip">Daemon</span>
+            <span class="chip">TrustZone</span>
+            <span class="chip">Secure Enclave</span>
+          </div>
+        </article>
+        <article class="panel">
+          <h3>Credentials</h3>
+          <div class="chip-row">
+            <span class="chip">AWS Certified Security - Specialty (2024)</span>
+            <span class="chip">Best Reviewer on SAMSUNG (2024)</span>
+            <span class="chip">Git / P4V</span>
+            <span class="chip">Trace32</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Contact</p>
+        <h2>Reach out</h2>
+      </div>
+      <div class="contact-grid">
+        <article class="panel">
+          <h3>Email</h3>
+          <p><a href="mailto:ksd77kr@gmail.com">ksd77kr@gmail.com</a></p>
+        </article>
+        <article class="panel">
+          <h3>Location</h3>
+          <p>Suwon City, Gyeonggi-do, Republic of Korea</p>
+        </article>
+        <article class="panel">
+          <h3>Availability</h3>
+          <p>Open to professional contact and portfolio review.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="games" class="section games-section">
+      <div class="section-head">
+        <p class="eyebrow">Games</p>
+        <h2>Snake</h2>
+      </div>
+
+      <div class="game-layout">
+        <article class="panel game-panel">
+          <div class="game-topbar">
+            <div>
+              <h3>Run the board</h3>
+              <p class="game-hint">Arrow keys or WASD on desktop, buttons or swipe on mobile. Space pauses. R restarts.</p>
+            </div>
+            <div class="game-stats">
+              <span>Score <strong data-score>0</strong></span>
+              <span>Best <strong data-high-score>0</strong></span>
+            </div>
+          </div>
+
+          <div class="game-canvas-wrap">
+            <canvas id="game-canvas" width="640" height="640" aria-label="Snake game board"></canvas>
+            <div class="game-overlay" data-overlay>
+              <p class="eyebrow">Ready</p>
+              <h3>Press start to begin.</h3>
+            </div>
+          </div>
+
+          <div class="game-controls">
+            <div class="control-row">
+              <button type="button" class="button button-primary" data-action="start">Start</button>
+              <button type="button" class="button button-secondary" data-action="pause">Pause</button>
+              <button type="button" class="button button-secondary" data-action="restart">Restart</button>
+              <button type="button" class="button button-secondary" data-action="enemy">Enemy: Off</button>
+            </div>
+
+            <div class="pad" aria-label="Touch controls">
+              <span></span>
+              <button type="button" class="pad-btn" data-direction="up" aria-label="Move up">▲</button>
+              <span></span>
+              <button type="button" class="pad-btn" data-direction="left" aria-label="Move left">◀</button>
+              <button type="button" class="pad-btn pad-btn-center" data-direction="start" aria-label="Start or pause">●</button>
+              <button type="button" class="pad-btn" data-direction="right" aria-label="Move right">▶</button>
+              <span></span>
+              <button type="button" class="pad-btn" data-direction="down" aria-label="Move down">▼</button>
+              <span></span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="panel game-side">
+          <h3>How it works</h3>
+          <ul class="list">
+            <li>Snake grows after eating food.</li>
+            <li>Reverse direction is blocked so controls stay fair.</li>
+            <li>Duplicate timers are prevented by a single game loop.</li>
+            <li>Optional random enemy mode can be toggled from the control bar.</li>
+          </ul>
+          <p class="muted" data-status>Game idle.</p>
+        </aside>
+      </div>
     </section>
   </main>
 
+  <footer class="site-footer">
+    <p>Built for GitHub Pages.</p>
+    <p>&copy; <span data-year></span> Sukdong (Sandy) Kim</p>
+  </footer>
+
+  <script src="game.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>
