@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <title>Sukdong (Sandy) Kim | System S/W Engineer</title>
-  <meta name="description" content="Responsive personal portfolio and snake game for Sukdong (Sandy) Kim.">
+  <meta name="description" content="Responsive personal portfolio and snake game for Sukdong (Sandy) Kim, focused on security and AI workflow automation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -34,6 +34,7 @@
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#research">Research</a>
+      <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
       <a href="#games">Games</a>
@@ -44,10 +45,10 @@
     <section id="home" class="section hero">
       <div class="hero-copy">
         <p class="eyebrow">Responsive portfolio + game</p>
-        <h1>Building secure systems from bootloader bring-up to Linux kernel and Android HAL.</h1>
+        <h1>Building secure systems and AI workflows from bring-up to production.</h1>
         <p class="lede">
-          17+ years of system software work across Qualcomm BSP porting, bare-board bring-up, TrustZone and AVF security,
-          and performance tuning for Samsung mobile platforms.
+          17+ years across Qualcomm BSP bring-up, TrustZone and AVF security, and on-prem AI workflow automation using
+          RAG, Vector DB, QLoRA, and multi-agent tooling.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#projects">View selected work</a>
@@ -58,20 +59,20 @@
       <aside class="hero-aside">
         <div class="stat-grid">
           <article>
-            <strong>17+</strong>
-            <span>years system SW</span>
+            <strong>17y6m</strong>
+            <span>system software</span>
           </article>
           <article>
-            <strong>5</strong>
-            <span>U.S. patent filings</span>
+            <strong>Principal</strong>
+            <span>Engineer</span>
+          </article>
+          <article>
+            <strong>AX</strong>
+            <span>& security focus</span>
           </article>
           <article>
             <strong>2024</strong>
             <span>AWS Security Specialty</span>
-          </article>
-          <article>
-            <strong>TrustZone</strong>
-            <span>& AVF security focus</span>
           </article>
         </div>
       </aside>
@@ -82,8 +83,9 @@
         <p class="eyebrow">About</p>
         <h2>Who I am</h2>
         <p>
-          I am a system software engineer based in Suwon City, Gyeonggi-do, Republic of Korea, with a background in
-          smartphone BSP bring-up, Linux kernel device drivers, Android daemon development, and secure credential handling.
+          I am a system software engineer at Samsung MX, currently focused on security development and AI-based workflow
+          automation. My background spans smartphone BSP bring-up, Linux kernel device drivers, Android daemon development,
+          and secure credential handling.
         </p>
       </article>
       <article class="panel">
@@ -93,7 +95,7 @@
           <li>Bootloader to Linux kernel bring-up and debugging</li>
           <li>HAL, AIDL, and Android daemon integration</li>
           <li>Security work around Knox, TrustZone, and AVF</li>
-          <li>Performance tuning, tracing, and board-level validation</li>
+          <li>On-prem LLM, RAG, Vector DB, QLoRA, and multi-agent automation</li>
         </ul>
       </article>
     </section>
@@ -105,24 +107,24 @@
       </div>
       <div class="timeline">
         <article class="timeline-item">
-          <p class="timeline-meta">2023 - Present | SAMSUNG</p>
-          <h3>Knox Matrix Project, Secure Enclave Developer and TG Leader</h3>
-          <p>Developed secure storage for confidential information within TrustZone and AVF, while coordinating interfaces between App TG and Server TZ.</p>
+          <p class="timeline-meta">2023 - Present | SAMSUNG MX</p>
+          <h3>Security Development Team, AI Workflow Automation</h3>
+          <p>Designed and built on-prem AI-based workflow automation for protected internal use, connecting legacy systems with LLM-driven tools.</p>
         </article>
         <article class="timeline-item">
-          <p class="timeline-meta">2020 - 2022 | SAMSUNG</p>
-          <h3>Flexible Display Form Factor BSP TG Leader</h3>
-          <p>Supported rollable smartphone bring-up with Qualcomm SDM845, sensor and motor drivers, HAL layers, and panel roll-degree patent work.</p>
+          <p class="timeline-meta">2009 - 2023 | SAMSUNG MX</p>
+          <h3>System Development Team, Principal Engineer</h3>
+          <p>Developed PMIC and MUIC device drivers and Qualcomm DDR subsystem BSP bring-up from MSM8996 through SDM845.</p>
         </article>
         <article class="timeline-item">
-          <p class="timeline-meta">2013 - 2019 | SAMSUNG</p>
-          <h3>Galaxy S4 to S20 BSP Engineer</h3>
-          <p>Ported Qualcomm BSPs across multiple Galaxy S generations, handled first boot, ROM writing, Trace32 debugging, and performance daemons.</p>
+          <p class="timeline-meta">2014 - 2016 | SKKU</p>
+          <h3>MS in Computer Science, Systems Software Lab</h3>
+          <p>Researched cgroup-aware load balancing in heterogeneous multiprocessor scheduling and applied the work to smartphone power optimization.</p>
         </article>
         <article class="timeline-item">
-          <p class="timeline-meta">2010 - 2012 | SAMSUNG</p>
-          <h3>Galaxy S1 to S3 Linux Kernel Device Driver Developer</h3>
-          <p>Implemented PMIC and MUIC device drivers for the Samsung Galaxy S platform.</p>
+          <p class="timeline-meta">2002 - 2009 | KIT</p>
+          <h3>BS in Software Engineering</h3>
+          <p>Built a foundation in computer and communications software that led into device driver and platform bring-up work.</p>
         </article>
       </div>
     </section>
@@ -134,19 +136,19 @@
       </div>
       <div class="card-grid">
         <article class="card">
-          <span class="card-tag">Knox Matrix</span>
-          <h3>Secure credential storage</h3>
-          <p>Built a secure enclave module for confidential information managed by Knox Matrix in TrustZone and AVF.</p>
+          <span class="card-tag">AX</span>
+          <h3>On-prem AI workflow automation</h3>
+          <p>Built internal LLM tools with RAG, Vector DB, QLoRA, and multi-agent orchestration to automate secure workflows.</p>
         </article>
         <article class="card">
-          <span class="card-tag">Flexible display</span>
-          <h3>Rollable smartphone bring-up</h3>
-          <p>Worked on SDM845 platform bring-up, sensor/motor device drivers, HAL integration, and form-factor validation.</p>
+          <span class="card-tag">Security</span>
+          <h3>Knox and secure enclave work</h3>
+          <p>Developed secure information handling inside TrustZone and AVF for protected Samsung internal and product workflows.</p>
         </article>
         <article class="card">
-          <span class="card-tag">Galaxy S series</span>
-          <h3>Platform bring-up and tuning</h3>
-          <p>Ported BSPs across Galaxy S generations, supported ROM writing, and improved runtime behavior with daemon work.</p>
+          <span class="card-tag">Platform</span>
+          <h3>Qualcomm BSP and driver bring-up</h3>
+          <p>Ported Qualcomm BSPs and device drivers across Samsung mobile platforms, from first boot to runtime performance tuning.</p>
         </article>
       </div>
     </section>
@@ -158,16 +160,35 @@
       </div>
       <div class="panel-grid">
         <article class="panel">
-          <h3>Patent work</h3>
-          <p>Filed five U.S. patents during the flexible display program, plus an additional patent related to roll-degree sensing.</p>
+          <h3>Scheduler research</h3>
+          <p>Completed a master's thesis on cgroup-aware load balancing in heterogeneous multiprocessor scheduling, with measured power reduction in a Galaxy S5 class device.</p>
         </article>
         <article class="panel">
-          <h3>Security systems</h3>
-          <p>Recent work centers on Samsung Knox credential security using TrustZone and AVF for protected execution paths.</p>
+          <h3>Applied impact</h3>
+          <p>The research was applied to Samsung mobile software, focusing on foreground and background task migration to improve user-facing responsiveness and efficiency.</p>
         </article>
         <article class="panel">
           <h3>Instrumentation</h3>
-          <p>Hands-on debugging includes Trace32 and SYSTRACE, with strong attention to performance, boot stability, and hardware bring-up.</p>
+          <p>Hands-on debugging includes Trace32 and SYSTRACE, with strong attention to power, boot stability, and hardware bring-up.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Education</p>
+        <h2>Formal background</h2>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-tag">M.S.</span>
+          <h3>Computer Science, SKKU</h3>
+          <p>2014 - 2016, Systems Software Lab, research focus on operating system scheduling.</p>
+        </article>
+        <article class="card">
+          <span class="card-tag">B.S.</span>
+          <h3>Software Engineering, KIT</h3>
+          <p>2002 - 2009, computer and communications software foundation for later platform work.</p>
         </article>
       </div>
     </section>
@@ -196,6 +217,9 @@
             <span class="chip">Daemon</span>
             <span class="chip">TrustZone</span>
             <span class="chip">Secure Enclave</span>
+            <span class="chip">RAG</span>
+            <span class="chip">Vector DB</span>
+            <span class="chip">Multi-Agent</span>
           </div>
         </article>
         <article class="panel">
@@ -205,6 +229,7 @@
             <span class="chip">Best Reviewer on SAMSUNG (2024)</span>
             <span class="chip">Git / P4V</span>
             <span class="chip">Trace32</span>
+            <span class="chip">NVIDIA DGX</span>
           </div>
         </article>
       </div>
