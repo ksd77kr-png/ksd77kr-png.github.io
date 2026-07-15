@@ -1,17 +1,20 @@
 :root {
-  color-scheme: dark;
-  --bg: #050806;
-  --bg-2: #09110d;
-  --panel: rgba(11, 18, 14, 0.92);
-  --panel-2: rgba(14, 24, 18, 0.92);
-  --line: rgba(91, 180, 118, 0.24);
-  --line-strong: rgba(123, 255, 175, 0.38);
-  --text: #e6f8ea;
-  --muted: #96b8a4;
-  --accent: #8cffb0;
-  --accent-2: #c7ffd8;
-  --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-  --radius: 0.6rem;
+  color-scheme: light;
+  --bg: #f8f2e8;
+  --bg-2: #ecf6f7;
+  --paper: #fffaf3;
+  --panel: rgba(255, 252, 247, 0.92);
+  --panel-strong: rgba(255, 255, 255, 0.98);
+  --line: rgba(97, 119, 127, 0.18);
+  --line-strong: rgba(33, 120, 157, 0.28);
+  --text: #18313a;
+  --muted: #5c6d74;
+  --accent: #2a88ae;
+  --accent-2: #d96a4c;
+  --accent-soft: #ffdfb7;
+  --sea: #5cb3c7;
+  --shadow: 0 18px 40px rgba(42, 56, 61, 0.12);
+  --radius: 0.65rem;
 }
 
 *,
@@ -28,8 +31,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top, rgba(140, 255, 176, 0.08), transparent 28%),
-    linear-gradient(180deg, #04110b 0%, #050806 46%, #040605 100%);
+    radial-gradient(circle at top left, rgba(255, 226, 170, 0.46), transparent 24%),
+    radial-gradient(circle at 85% 12%, rgba(92, 179, 199, 0.22), transparent 20%),
+    linear-gradient(180deg, #f7f3eb 0%, #edf5f7 52%, #f9f0e6 100%);
   color: var(--text);
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
   line-height: 1.55;
@@ -41,10 +45,10 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 100% 34px, 34px 100%;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.36), transparent 70%);
+    linear-gradient(rgba(24, 49, 58, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 49, 58, 0.018) 1px, transparent 1px);
+  background-size: 100% 38px, 38px 100%;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent 72%);
 }
 
 a {
@@ -63,7 +67,8 @@ a {
 
 img,
 svg,
-canvas {
+canvas,
+iframe {
   display: block;
   max-width: 100%;
 }
@@ -76,7 +81,7 @@ canvas {
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--line-strong);
   border-radius: 0.45rem;
-  background: var(--bg-2);
+  background: var(--panel-strong);
   color: var(--text);
   z-index: 10;
 }
@@ -102,7 +107,7 @@ main,
   gap: 1rem;
   padding: 1rem 0;
   backdrop-filter: blur(18px);
-  background: linear-gradient(180deg, rgba(5, 8, 6, 0.96), rgba(5, 8, 6, 0.78));
+  background: linear-gradient(180deg, rgba(248, 242, 232, 0.98), rgba(248, 242, 232, 0.76));
 }
 
 .brand {
@@ -120,8 +125,8 @@ main,
   place-items: center;
   border: 1px solid var(--line-strong);
   border-radius: 0.45rem;
-  background: linear-gradient(180deg, rgba(140, 255, 176, 0.18), rgba(140, 255, 176, 0.05));
-  box-shadow: inset 0 0 24px rgba(140, 255, 176, 0.08);
+  background: linear-gradient(180deg, rgba(42, 136, 174, 0.18), rgba(42, 136, 174, 0.05));
+  box-shadow: inset 0 0 24px rgba(42, 136, 174, 0.08);
   color: var(--accent);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -154,7 +159,7 @@ p {
   padding: 0.7rem 0.85rem;
   border: 1px solid var(--line);
   border-radius: 0.5rem;
-  background: rgba(9, 17, 13, 0.9);
+  background: rgba(255, 252, 247, 0.96);
   color: var(--text);
   font: inherit;
 }
@@ -193,7 +198,7 @@ p {
 .site-nav a:hover,
 .site-nav a:focus-visible {
   border-color: var(--line-strong);
-  background: rgba(140, 255, 176, 0.08);
+  background: rgba(42, 136, 174, 0.08);
   color: var(--text);
   outline: none;
 }
@@ -218,10 +223,12 @@ main {
 .hero-aside,
 .panel,
 .timeline-item,
-.card {
+.card,
+.studio-copy,
+.studio-frame {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(14, 24, 18, 0.96), rgba(8, 12, 9, 0.96));
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.98), rgba(249, 245, 237, 0.96));
   box-shadow: var(--shadow);
 }
 
@@ -271,13 +278,17 @@ main {
 .button:hover,
 .button:focus-visible {
   border-color: var(--accent);
-  background: rgba(140, 255, 176, 0.08);
+  background: rgba(42, 136, 174, 0.08);
   outline: none;
 }
 
 .button-primary {
-  background: linear-gradient(180deg, rgba(140, 255, 176, 0.2), rgba(140, 255, 176, 0.08));
-  color: var(--accent-2);
+  background: linear-gradient(180deg, rgba(42, 136, 174, 0.18), rgba(42, 136, 174, 0.08));
+  color: #124e66;
+}
+
+.button-secondary {
+  background: linear-gradient(180deg, rgba(217, 106, 76, 0.1), rgba(217, 106, 76, 0.03));
 }
 
 .hero-aside {
@@ -294,13 +305,13 @@ main {
   padding: 0.9rem;
   border: 1px solid var(--line);
   border-radius: 0.5rem;
-  background: rgba(3, 7, 5, 0.48);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .stat-grid strong {
   display: block;
   font-size: 1.15rem;
-  color: var(--accent-2);
+  color: var(--accent);
 }
 
 .stat-grid span,
@@ -313,21 +324,24 @@ main {
 .card-grid,
 .skills-wrap,
 .contact-grid,
-.game-layout {
+.game-layout,
+.studio-layout {
   display: grid;
   gap: 1rem;
 }
 
 .panel,
 .card,
-.timeline-item {
+.timeline-item,
+.studio-copy {
   padding: 1.1rem;
 }
 
 .panel h2,
 .section-head h2,
 .game-panel h3,
-.game-side h3 {
+.game-side h3,
+.studio-copy h3 {
   margin-top: 0.35rem;
   margin-bottom: 0.35rem;
   font-size: 1.15rem;
@@ -376,14 +390,14 @@ main {
   font: 500 0.76rem/1.2 "IBM Plex Mono", monospace;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--accent);
+  color: var(--accent-2);
 }
 
 .panel-grid .panel,
 .skills-wrap .panel,
 .contact-grid .panel,
 .game-side {
-  background: linear-gradient(180deg, rgba(11, 19, 14, 0.96), rgba(7, 11, 8, 0.96));
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.98), rgba(247, 241, 232, 0.96));
 }
 
 .chip {
@@ -393,9 +407,36 @@ main {
   padding: 0.35rem 0.75rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(140, 255, 176, 0.05);
+  background: rgba(42, 136, 174, 0.05);
   color: var(--text);
   font: 500 0.9rem/1.2 "IBM Plex Mono", monospace;
+}
+
+.studio-layout {
+  align-items: start;
+}
+
+.studio-copy {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.studio-copy code {
+  padding: 0.08rem 0.32rem;
+  border-radius: 0.35rem;
+  background: rgba(92, 179, 199, 0.12);
+}
+
+.studio-frame {
+  overflow: hidden;
+  padding: 0;
+}
+
+.studio-frame iframe {
+  width: 100%;
+  min-height: 860px;
+  border: 0;
+  background: #fffdf9;
 }
 
 .game-panel {
@@ -423,11 +464,11 @@ main {
   padding: 0.4rem 0.65rem;
   border: 1px solid var(--line);
   border-radius: 0.45rem;
-  background: rgba(140, 255, 176, 0.04);
+  background: rgba(92, 179, 199, 0.05);
 }
 
 .game-stats strong {
-  color: var(--accent-2);
+  color: var(--accent);
 }
 
 .game-canvas-wrap {
@@ -436,9 +477,9 @@ main {
   border: 1px solid var(--line-strong);
   border-radius: 0.55rem;
   background:
-    linear-gradient(90deg, rgba(140, 255, 176, 0.05) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(140, 255, 176, 0.05) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(4, 7, 5, 0.98), rgba(10, 14, 11, 0.98));
+    linear-gradient(90deg, rgba(42, 136, 174, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(42, 136, 174, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(252, 247, 238, 0.98), rgba(236, 246, 247, 0.96));
   background-size: 32px 32px, 32px 32px, 100% 100%;
   overflow: hidden;
 }
@@ -456,7 +497,7 @@ main {
   gap: 0.45rem;
   padding: 1rem;
   text-align: center;
-  background: linear-gradient(180deg, rgba(4, 7, 5, 0.55), rgba(4, 7, 5, 0.78));
+  background: linear-gradient(180deg, rgba(248, 242, 232, 0.55), rgba(248, 242, 232, 0.78));
   backdrop-filter: blur(1px);
   transition: opacity 0.2s ease;
 }
@@ -487,7 +528,7 @@ main {
   height: 3.4rem;
   border: 1px solid var(--line-strong);
   border-radius: 0.5rem;
-  background: rgba(140, 255, 176, 0.06);
+  background: rgba(42, 136, 174, 0.06);
   color: var(--text);
   font: 700 1rem/1 "IBM Plex Mono", monospace;
   cursor: pointer;
@@ -497,12 +538,12 @@ main {
 .pad-btn:hover,
 .pad-btn:focus-visible {
   border-color: var(--accent);
-  background: rgba(140, 255, 176, 0.12);
+  background: rgba(42, 136, 174, 0.12);
   outline: none;
 }
 
 .pad-btn-center {
-  color: var(--accent);
+  color: var(--accent-2);
 }
 
 .game-side {
@@ -533,7 +574,8 @@ main {
 
   .panel-grid,
   .skills-wrap,
-  .contact-grid {
+  .contact-grid,
+  .studio-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -583,7 +625,12 @@ main {
     width: 100%;
   }
 
+  .studio-frame iframe {
+    min-height: 760px;
+  }
+
   .site-footer {
     flex-direction: column;
   }
 }
+

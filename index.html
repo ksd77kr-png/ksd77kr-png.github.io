@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="light">
   <title>Sukdong (Sandy) Kim | System S/W Engineer</title>
-  <meta name="description" content="Responsive personal portfolio and snake game for Sukdong (Sandy) Kim, focused on security and AI workflow automation.">
+  <meta name="description" content="Responsive personal portfolio, Bizbal bead-curtain studio, and snake game for Sukdong (Sandy) Kim.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -37,6 +37,7 @@
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
+      <a href="#bizbal">Bizbal</a>
       <a href="#games">Games</a>
     </nav>
   </header>
@@ -44,14 +45,15 @@
   <main>
     <section id="home" class="section hero">
       <div class="hero-copy">
-        <p class="eyebrow">Responsive portfolio + game</p>
-        <h1>Building secure systems and AI workflows from bring-up to production.</h1>
+        <p class="eyebrow">Responsive portfolio + studio + game</p>
+        <h1>Building secure systems, bright interfaces, and playful tools.</h1>
         <p class="lede">
           17+ years across Qualcomm BSP bring-up, TrustZone and AVF security, and on-prem AI workflow automation using
-          RAG, Vector DB, QLoRA, and multi-agent tooling.
+          RAG, Vector DB, QLoRA, and multi-agent tooling. Now with the Bizbal bead-curtain studio woven into the home page.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#projects">View selected work</a>
+          <a class="button button-secondary" href="#bizbal">Open Bizbal</a>
           <a class="button button-secondary" href="#games">Play snake</a>
         </div>
       </div>
@@ -253,6 +255,40 @@
           <h3>Availability</h3>
           <p>Open to professional contact and portfolio review.</p>
         </article>
+      </div>
+    </section>
+
+    <section id="bizbal" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Studio</p>
+        <h2>Bizbal bead-curtain maker</h2>
+      </div>
+
+      <div class="studio-layout">
+        <article class="panel studio-copy">
+          <h3>Embedded into the main homepage</h3>
+          <p>
+            The Bizbal tool from the <code>bizbal/</code> folder now lives beside the portfolio, so the site can show the
+            full creative workflow without leaving the main page.
+          </p>
+          <p class="muted">
+            The full app still opens on its own page, and the embedded frame keeps the same local files and browser-only
+            behavior.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="bizbal/index.html">Open full studio</a>
+            <a class="button button-secondary" href="#games">Go to games</a>
+          </div>
+        </article>
+
+        <div class="studio-frame">
+          <iframe
+            src="bizbal/index.html"
+            title="Bizbal bead-curtain maker"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+          ></iframe>
+        </div>
       </div>
     </section>
 

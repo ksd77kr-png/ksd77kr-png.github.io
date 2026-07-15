@@ -364,7 +364,7 @@
       this.ctx.clearRect(0, 0, width, height);
 
       this.ctx.save();
-      this.ctx.fillStyle = "rgba(2, 5, 3, 1)";
+      this.ctx.fillStyle = "#f9f3e8";
       this.ctx.fillRect(0, 0, width, height);
 
       this.drawGrid(width, height, cellWidth, cellHeight);
@@ -382,7 +382,7 @@
     }
 
     drawGrid(width, height, cellWidth, cellHeight) {
-      this.ctx.strokeStyle = "rgba(140, 255, 176, 0.08)";
+      this.ctx.strokeStyle = "rgba(42, 136, 174, 0.1)";
       this.ctx.lineWidth = 1;
       for (let x = 0; x <= this.cols; x += 1) {
         this.ctx.beginPath();
@@ -403,14 +403,14 @@
         const x = segment.x * cellWidth;
         const y = segment.y * cellHeight;
         const inset = index === 0 ? 1.5 : 2.5;
-        this.ctx.fillStyle = index === 0 ? "#b8ffd0" : "#6fe39a";
+        this.ctx.fillStyle = index === 0 ? "#2a88ae" : "#5cb3c7";
         this.roundRect(x + inset, y + inset, cellWidth - inset * 2, cellHeight - inset * 2, 4);
         this.ctx.fill();
       });
     }
 
     drawFood(cellWidth, cellHeight) {
-      this.ctx.fillStyle = "#ff9a76";
+      this.ctx.fillStyle = "#d96a4c";
       const x = this.food.x * cellWidth + 4;
       const y = this.food.y * cellHeight + 4;
       this.roundRect(x, y, cellWidth - 8, cellHeight - 8, 6);
@@ -419,7 +419,7 @@
 
     drawEnemy(cellWidth, cellHeight) {
       if (!this.enemy) return;
-      this.ctx.fillStyle = "#ffe169";
+      this.ctx.fillStyle = "#f2c14e";
       const x = this.enemy.x * cellWidth + 3;
       const y = this.enemy.y * cellHeight + 3;
       this.roundRect(x, y, cellWidth - 6, cellHeight - 6, 5);
