@@ -1,59 +1,57 @@
 "use strict";
 
 const PALETTE = [
-  { name: "버건디", hex: "#7b2638" },
-  { name: "레드", hex: "#d64541" },
-  { name: "딸기우유", hex: "#f4a6b8" },
-  { name: "연핑크", hex: "#f8c8d8" },
-  { name: "핑크", hex: "#ec6fa8" },
-  { name: "핫핑크", hex: "#e9358f" },
-  { name: "코랄", hex: "#f26b5b" },
-  { name: "연코랄", hex: "#f7a79b" },
-  { name: "연다홍", hex: "#f58b7a" },
-  { name: "연주황", hex: "#f7b27a" },
-  { name: "주황", hex: "#f28c28" },
-  { name: "노랑", hex: "#f2c94c" },
-  { name: "연노랑", hex: "#f8e8a0" },
-  { name: "형광노랑", hex: "#e8f53d" },
-  { name: "메론그린", hex: "#c9e89a" },
-  { name: "연두", hex: "#a8d66d" },
-  { name: "연초록", hex: "#9bcf9b" },
-  { name: "초록", hex: "#4f8a5b" },
-  { name: "연청록", hex: "#8fd3c1" },
-  { name: "청록", hex: "#278c82" },
-  { name: "소다", hex: "#a6e3e9" },
-  { name: "연하늘", hex: "#c8e8f4" },
-  { name: "하늘", hex: "#83c9e8" },
-  { name: "블루", hex: "#377bb5" },
-  { name: "스머프블루", hex: "#4da1d9" },
-  { name: "다크네이비", hex: "#1f314d" },
-  { name: "네이비그레이", hex: "#596579" },
-  { name: "연보라", hex: "#c3b0dd" },
-  { name: "보라", hex: "#8b62b2" },
-  { name: "진보라", hex: "#5d347a" },
-  { name: "라이트모브", hex: "#c7a4b8" },
-  { name: "모브", hex: "#9a687d" },
-  { name: "플럼", hex: "#713f5a" },
-  { name: "살구", hex: "#f2b18f" },
-  { name: "다크살구", hex: "#d88969" },
-  { name: "베이지브라운", hex: "#b89978" },
-  { name: "황토색", hex: "#b8873b" },
-  { name: "브릭브라운", hex: "#9a4f3d" },
-  { name: "진브라운", hex: "#654437" },
-  { name: "다크카키", hex: "#4f5536" },
-  { name: "블랙", hex: "#252525" },
-  { name: "다크그레이", hex: "#55585c" },
-  { name: "라이트그레이", hex: "#b7b8b6" },
-  { name: "화이트", hex: "#f4f1e8" },
-  { name: "아이보리", hex: "#eee4c9" }
+  { name: "Crimson", hex: "#7b2638" },
+  { name: "Scarlet", hex: "#d64541" },
+  { name: "Rose", hex: "#f4a6b8" },
+  { name: "Blush", hex: "#f8c8d8" },
+  { name: "Fuchsia", hex: "#ec6fa8" },
+  { name: "Magenta", hex: "#e9358f" },
+  { name: "Coral", hex: "#f26b5b" },
+  { name: "Salmon", hex: "#f7a79b" },
+  { name: "Peach", hex: "#f58b7a" },
+  { name: "Apricot", hex: "#f7b27a" },
+  { name: "Orange", hex: "#f28c28" },
+  { name: "Sunflower", hex: "#f2c94c" },
+  { name: "Butter", hex: "#f8e8a0" },
+  { name: "Lime", hex: "#e8f53d" },
+  { name: "Moss", hex: "#c9e89a" },
+  { name: "Leaf", hex: "#a8d66d" },
+  { name: "Sage", hex: "#9bcf9b" },
+  { name: "Forest", hex: "#4f8a5b" },
+  { name: "Seafoam", hex: "#8fd3c1" },
+  { name: "Teal", hex: "#278c82" },
+  { name: "Aqua", hex: "#a6e3e9" },
+  { name: "Ice", hex: "#c8e8f4" },
+  { name: "Sky", hex: "#83c9e8" },
+  { name: "Blue", hex: "#377bb5" },
+  { name: "Azure", hex: "#4da1d9" },
+  { name: "Navy", hex: "#1f314d" },
+  { name: "Slate", hex: "#596579" },
+  { name: "Lavender", hex: "#c3b0dd" },
+  { name: "Violet", hex: "#8b62b2" },
+  { name: "Indigo", hex: "#5d347a" },
+  { name: "Mauve", hex: "#c7a4b8" },
+  { name: "Dusty Rose", hex: "#9a687d" },
+  { name: "Plum", hex: "#713f5a" },
+  { name: "Sand", hex: "#f2b18f" },
+  { name: "Tangerine", hex: "#d88969" },
+  { name: "Beige", hex: "#b89978" },
+  { name: "Tan", hex: "#b8873b" },
+  { name: "Terracotta", hex: "#9a4f3d" },
+  { name: "Umber", hex: "#654437" },
+  { name: "Olive", hex: "#4f5536" },
+  { name: "Charcoal", hex: "#252525" },
+  { name: "Slate Gray", hex: "#55585c" },
+  { name: "Silver", hex: "#b7b8b6" },
+  { name: "Ivory", hex: "#f4f1e8" },
+  { name: "Pearl", hex: "#eee4c9" }
 ].map(color => ({ ...color, rgb: hexToRgb(color.hex) }));
 
-// version 1 프로젝트의 10색 인덱스를 현재 팔레트 인덱스로 변환합니다.
 const LEGACY_PALETTE_INDEX_MAP = [1, 11, 17, 23, 27, 33, 38, 42, 40, 43];
-
 const BEAD_SIZES = [4, 6, 8, 10];
 const CURTAIN_WIDTHS = [10, 15, 20, 30, 40, 50, 60, 70];
-const FIXED_BEAD_NAME = "고정 구슬";
+const FIXED_BEAD_NAME = "Fixed bead";
 
 const els = {
   beadSize: document.querySelector("#bead-size"),
@@ -98,12 +96,11 @@ const state = {
   sourceName: "",
   cols: 0,
   rows: 0,
-  cells: [],
-  originalCells: [],
+  cells: new Uint8Array(0),
+  originalCells: new Uint8Array(0),
   selectedColor: 0,
   cellSize: Number(els.zoom.value),
   drawing: false,
-  strokeChanged: false,
   touchPointer: null,
   undoStack: [],
   updateTimer: null,
@@ -115,6 +112,7 @@ const state = {
 buildPalette();
 bindEvents();
 updateZoomRange();
+updateInputSummary();
 
 function bindEvents() {
   els.imageFile.addEventListener("change", event => {
@@ -141,7 +139,7 @@ function bindEvents() {
   els.fileDrop.addEventListener("drop", event => {
     const file = [...event.dataTransfer.files].find(item => /image\/jpeg/i.test(item.type) || /\.jpe?g$/i.test(item.name));
     if (file) loadFile(file);
-    else showError("JPG 또는 JPEG 파일을 선택해 주세요.");
+    else showError("Please choose a JPG or JPEG file.");
   });
 
   els.generateBtn.addEventListener("click", generatePattern);
@@ -180,11 +178,12 @@ function getMinimumCellSize(widthCm = Number(els.curtainWidth.value)) {
 function updateZoomRange() {
   const minimum = getMinimumCellSize();
   els.zoom.min = String(minimum);
-  if (state.cellSize >= minimum) return;
-  state.cellSize = minimum;
-  els.zoom.value = String(minimum);
-  els.zoomValue.value = `${minimum}px`;
-  drawGrid();
+  if (state.cellSize < minimum) {
+    state.cellSize = minimum;
+    els.zoom.value = String(minimum);
+    els.zoomValue.value = `${minimum}px`;
+    drawGrid();
+  }
 }
 
 function buildPalette() {
@@ -215,7 +214,7 @@ function updatePaletteAvailability() {
   [...els.palette.children].forEach((button, index) => {
     const excluded = state.excludedColors.has(index);
     button.disabled = excluded;
-    button.title = excluded ? `${PALETTE[index].name} (사용하지 않음)` : PALETTE[index].name;
+    button.title = excluded ? `${PALETTE[index].name} (disabled)` : PALETTE[index].name;
   });
   if (state.excludedColors.has(state.selectedColor)) {
     const nextColor = PALETTE.findIndex((_, index) => !state.excludedColors.has(index));
@@ -225,7 +224,7 @@ function updatePaletteAvailability() {
 
 async function loadFile(file) {
   if (!/image\/jpeg/i.test(file.type) && !/\.jpe?g$/i.test(file.name)) {
-    showError("JPG 또는 JPEG 파일만 사용할 수 있습니다.");
+    showError("Bizbal only accepts JPG or JPEG images.");
     return;
   }
 
@@ -241,19 +240,19 @@ async function loadFile(file) {
     els.generateBtn.disabled = false;
     hideError();
     updateInputSummary();
-  } catch (error) {
-    showError("이미지를 읽을 수 없습니다. 다른 JPG 파일을 선택해 주세요.");
+  } catch {
+    showError("The image could not be loaded. Please pick another JPG file.");
   }
 }
 
 function getDimensions() {
   const beadMm = Number(els.beadSize.value);
   const widthCm = Number(els.curtainWidth.value);
-  if (!BEAD_SIZES.includes(beadMm)) throw new Error("구슬 크기는 4, 6, 8, 10mm 중에서 선택해 주세요.");
-  if (!CURTAIN_WIDTHS.includes(widthCm)) throw new Error("완성 가로 크기는 10, 15, 20, 30, 40, 50, 60, 70cm 중에서 선택해 주세요.");
+  if (!BEAD_SIZES.includes(beadMm)) throw new Error("Please select 4, 6, 8, or 10 mm.");
+  if (!CURTAIN_WIDTHS.includes(widthCm)) throw new Error("Please select 10, 15, 20, 30, 40, 50, 60, or 70 cm.");
   const cols = Math.max(1, Math.round(widthCm * 10 / beadMm));
   const rows = state.sourceImage ? Math.max(1, Math.round(cols * state.sourceImage.naturalHeight / state.sourceImage.naturalWidth)) : 0;
-  if (rows > 1000 || cols * rows > 300000) throw new Error("이미지가 너무 세로로 깁니다. 세로가 짧은 이미지나 더 큰 구슬 크기를 사용해 주세요.");
+  if (rows > 1000 || cols * rows > 300000) throw new Error("The image is too large for browser processing.");
   return { beadMm, widthCm, cols, rows };
 }
 
@@ -270,7 +269,7 @@ function validateInputs(showMessage = true) {
 
 function updateInputSummary() {
   if (!state.sourceImage) {
-    els.inputSummary.textContent = "사진을 선택하면 예상 도안 크기를 계산합니다.";
+    els.inputSummary.textContent = "Pick a photo and the studio will calculate the pattern size.";
     return;
   }
   try {
@@ -278,10 +277,10 @@ function updateInputSummary() {
     const actualWidth = cols * beadMm / 10;
     const actualRows = rows + 1;
     const actualHeight = actualRows * beadMm / 10;
-    els.inputSummary.textContent = `예상 ${cols} × ${actualRows}칸 · 최상단 고정 구슬 포함 · 실제 약 ${formatNumber(actualWidth)} × ${formatNumber(actualHeight)}cm`;
+    els.inputSummary.textContent = `Approx. ${cols} x ${actualRows} beads, including the fixed top row. Actual size: ${formatNumber(actualWidth)} x ${formatNumber(actualHeight)} cm.`;
     hideError();
-  } catch (error) {
-    els.inputSummary.textContent = "입력값을 확인해 주세요.";
+  } catch {
+    els.inputSummary.textContent = "Check the selected values.";
   }
 }
 
@@ -290,7 +289,7 @@ function generatePattern() {
 
   try {
     els.generateBtn.disabled = true;
-    els.generateBtn.textContent = "변환 중…";
+    els.generateBtn.innerHTML = "Generating<span>→</span>";
     const { cols, rows } = getDimensions();
     const sampleCanvas = document.createElement("canvas");
     sampleCanvas.width = cols;
@@ -314,10 +313,10 @@ function generatePattern() {
     updateAllOutputs();
     requestAnimationFrame(() => els.workspace.scrollIntoView({ behavior: "smooth", block: "start" }));
   } catch (error) {
-    showError(error.message || "도안을 만드는 중 문제가 발생했습니다.");
+    showError(error.message || "Something went wrong while generating the pattern.");
   } finally {
     els.generateBtn.disabled = false;
-    els.generateBtn.innerHTML = "도안 다시 만들기 <span>→</span>";
+    els.generateBtn.innerHTML = "Generate pattern<span>→</span>";
   }
 }
 
@@ -363,12 +362,12 @@ function drawGrid() {
   els.canvas.width = state.cols * size;
   els.canvas.height = actualRows * size;
   ctx.clearRect(0, 0, els.canvas.width, els.canvas.height);
-  ctx.fillStyle = "#f7f2e9";
+  ctx.fillStyle = "#f8f5ee";
   ctx.fillRect(0, 0, els.canvas.width, els.canvas.height);
   state.beadSprites = createBeadSprites(size);
   const fixedBeadSprite = createFixedBeadSprite(size);
 
-  ctx.fillStyle = "#e5eee9";
+  ctx.fillStyle = "#eef6f8";
   ctx.fillRect(0, 0, els.canvas.width, size);
   for (let col = 0; col < state.cols; col += 1) {
     ctx.drawImage(fixedBeadSprite, col * size, 0);
@@ -383,15 +382,17 @@ function drawGrid() {
   }
 
   ctx.beginPath();
-  ctx.strokeStyle = size >= 11 ? "rgba(35,31,32,.11)" : "rgba(35,31,32,.07)";
+  ctx.strokeStyle = size >= 11 ? "rgba(24,49,58,.11)" : "rgba(24,49,58,.07)";
   ctx.lineWidth = 1;
   for (let col = 0; col <= state.cols; col += 1) {
-    const x = Math.min(col * size + .5, els.canvas.width - .5);
-    ctx.moveTo(x, 0); ctx.lineTo(x, els.canvas.height);
+    const x = Math.min(col * size + 0.5, els.canvas.width - 0.5);
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, els.canvas.height);
   }
   for (let row = 0; row <= actualRows; row += 1) {
-    const y = Math.min(row * size + .5, els.canvas.height - .5);
-    ctx.moveTo(0, y); ctx.lineTo(els.canvas.width, y);
+    const y = Math.min(row * size + 0.5, els.canvas.height - 0.5);
+    ctx.moveTo(0, y);
+    ctx.lineTo(els.canvas.width, y);
   }
   ctx.stroke();
 }
@@ -403,7 +404,7 @@ function createBeadSprites(size) {
     sprite.height = size;
     const spriteCtx = sprite.getContext("2d");
     const center = size / 2;
-    const radius = Math.max(1, size * .42);
+    const radius = Math.max(1, size * 0.42);
 
     spriteCtx.beginPath();
     spriteCtx.arc(center, center, radius, 0, Math.PI * 2);
@@ -412,10 +413,10 @@ function createBeadSprites(size) {
     spriteCtx.save();
     spriteCtx.clip();
 
-    const volume = spriteCtx.createRadialGradient(size * .31, size * .27, 0, center, center, radius * 1.15);
+    const volume = spriteCtx.createRadialGradient(size * 0.31, size * 0.27, 0, center, center, radius * 1.15);
     volume.addColorStop(0, "rgba(255,255,255,.72)");
-    volume.addColorStop(.24, "rgba(255,255,255,.23)");
-    volume.addColorStop(.62, "rgba(255,255,255,0)");
+    volume.addColorStop(0.24, "rgba(255,255,255,.23)");
+    volume.addColorStop(0.62, "rgba(255,255,255,0)");
     volume.addColorStop(1, "rgba(0,0,0,.32)");
     spriteCtx.fillStyle = volume;
     spriteCtx.fillRect(0, 0, size, size);
@@ -423,8 +424,8 @@ function createBeadSprites(size) {
 
     spriteCtx.beginPath();
     spriteCtx.arc(center, center, radius, 0, Math.PI * 2);
-    spriteCtx.strokeStyle = "rgba(35,31,32,.34)";
-    spriteCtx.lineWidth = Math.max(1, size * .055);
+    spriteCtx.strokeStyle = "rgba(24,49,58,.34)";
+    spriteCtx.lineWidth = Math.max(1, size * 0.055);
     spriteCtx.stroke();
     return sprite;
   });
@@ -436,7 +437,7 @@ function createFixedBeadSprite(size) {
   sprite.height = size;
   const spriteCtx = sprite.getContext("2d");
   const center = size / 2;
-  const radius = size * .43;
+  const radius = size * 0.43;
 
   spriteCtx.beginPath();
   for (let point = 0; point < 6; point += 1) {
@@ -449,78 +450,45 @@ function createFixedBeadSprite(size) {
   spriteCtx.closePath();
   const metal = spriteCtx.createLinearGradient(0, 0, size, size);
   metal.addColorStop(0, "#fff0a8");
-  metal.addColorStop(.32, "#d69b24");
-  metal.addColorStop(.58, "#fff2a6");
+  metal.addColorStop(0.32, "#d69b24");
+  metal.addColorStop(0.58, "#fff2a6");
   metal.addColorStop(1, "#8b5b0c");
   spriteCtx.fillStyle = metal;
   spriteCtx.fill();
   spriteCtx.strokeStyle = "#5e3e0b";
-  spriteCtx.lineWidth = Math.max(1, size * .075);
+  spriteCtx.lineWidth = Math.max(1, size * 0.075);
   spriteCtx.stroke();
 
   spriteCtx.beginPath();
-  spriteCtx.arc(center, center, Math.max(1.2, size * .14), 0, Math.PI * 2);
+  spriteCtx.arc(center, center, Math.max(1.2, size * 0.14), 0, Math.PI * 2);
   spriteCtx.fillStyle = "#173f37";
   spriteCtx.fill();
   spriteCtx.strokeStyle = "rgba(255,255,255,.8)";
-  spriteCtx.lineWidth = Math.max(.7, size * .045);
+  spriteCtx.lineWidth = Math.max(0.7, size * 0.045);
   spriteCtx.stroke();
   return sprite;
 }
 
 function startDrawing(event) {
   if (!state.cells.length) return;
-  if (event.pointerType === "touch") {
-    state.touchPointer = {
-      pointerId: event.pointerId,
-      startX: event.clientX,
-      startY: event.clientY,
-      moved: false
-    };
-    return;
-  }
   event.preventDefault();
   state.drawing = true;
-  state.strokeChanged = false;
   pushHistory();
   paintAtPointer(event);
   els.canvas.setPointerCapture?.(event.pointerId);
 }
 
 function continueDrawing(event) {
-  if (event.pointerType === "touch") {
-    const touch = state.touchPointer;
-    if (!touch || touch.pointerId !== event.pointerId) return;
-    if (Math.hypot(event.clientX - touch.startX, event.clientY - touch.startY) > 8) {
-      touch.moved = true;
-    }
-    return;
-  }
   if (!state.drawing) return;
   event.preventDefault();
   paintAtPointer(event);
 }
 
 function stopDrawing(event) {
-  if (event?.pointerType === "touch") {
-    const touch = state.touchPointer;
-    if (!touch || touch.pointerId !== event.pointerId) return;
-    state.touchPointer = null;
-    if (event.type === "pointerup" && !touch.moved) {
-      state.strokeChanged = false;
-      pushHistory();
-      paintAtPointer(event);
-      if (!state.strokeChanged) state.undoStack.pop();
-      els.undoBtn.disabled = state.undoStack.length === 0;
-      scheduleOutputUpdate();
-    }
-    return;
-  }
   if (!state.drawing) return;
   state.drawing = false;
-  if (!state.strokeChanged) state.undoStack.pop();
-  els.undoBtn.disabled = state.undoStack.length === 0;
-  scheduleOutputUpdate();
+  if (state.undoStack.length) els.undoBtn.disabled = false;
+  if (event?.type === "pointercancel") scheduleOutputUpdate();
 }
 
 function paintAtPointer(event) {
@@ -532,20 +500,20 @@ function paintAtPointer(event) {
   const index = row * state.cols + col;
   if (state.cells[index] === state.selectedColor) return;
   state.cells[index] = state.selectedColor;
-  state.strokeChanged = true;
   drawCell(row, col);
+  scheduleOutputUpdate();
 }
 
 function drawCell(row, col) {
   const size = state.cellSize;
   const x = col * size;
   const y = (row + 1) * size;
-  ctx.fillStyle = "#f7f2e9";
+  ctx.fillStyle = "#f8f5ee";
   ctx.fillRect(x, y, size, size);
   if (!state.beadSprites.length) state.beadSprites = createBeadSprites(size);
   ctx.drawImage(state.beadSprites[state.cells[row * state.cols + col]], x, y);
-  ctx.strokeStyle = "rgba(35,31,32,.1)";
-  ctx.strokeRect(x + .5, y + .5, size - 1, size - 1);
+  ctx.strokeStyle = "rgba(24,49,58,.1)";
+  ctx.strokeRect(x + 0.5, y + 0.5, size - 1, size - 1);
 }
 
 function scheduleOutputUpdate() {
@@ -580,34 +548,34 @@ function updateMetrics() {
   const actualRows = state.rows + 1;
   const width = state.cols * beadMm / 10;
   const height = actualRows * beadMm / 10;
-  els.metricGrid.textContent = `${state.cols} × ${actualRows}`;
-  els.metricSize.textContent = `${formatNumber(width)} × ${formatNumber(height)}cm`;
-  els.metricCount.textContent = (state.cells.length + state.cols).toLocaleString("ko-KR");
+  els.metricGrid.textContent = `${state.cols} x ${actualRows}`;
+  els.metricSize.textContent = `${formatNumber(width)} x ${formatNumber(height)} cm`;
+  els.metricCount.textContent = (state.cells.length + state.cols).toLocaleString("en-US");
 }
 
 function updateCounts() {
   const counts = Array(PALETTE.length).fill(0);
   state.cells.forEach(colorIndex => { counts[colorIndex] += 1; });
   els.counts.replaceChildren();
+
   const fixedChip = document.createElement("button");
   fixedChip.type = "button";
   fixedChip.className = "count-chip fixed-chip";
   fixedChip.disabled = true;
-  fixedChip.innerHTML = `<i></i><span>${FIXED_BEAD_NAME}</span><b>${state.cols.toLocaleString("ko-KR")}개</b>`;
-  fixedChip.setAttribute("aria-label", `${FIXED_BEAD_NAME}, ${state.cols.toLocaleString("ko-KR")}개, 편집할 수 없음`);
+  fixedChip.innerHTML = `<i></i><span>${FIXED_BEAD_NAME}</span><b>${state.cols.toLocaleString("en-US")}</b>`;
+  fixedChip.setAttribute("aria-label", `${FIXED_BEAD_NAME}, ${state.cols.toLocaleString("en-US")} beads`);
   els.counts.append(fixedChip);
+
   PALETTE.forEach((color, index) => {
     const chip = document.createElement("button");
     chip.type = "button";
     chip.className = "count-chip";
     if (state.excludedColors.has(index)) chip.classList.add("is-excluded");
     chip.style.setProperty("--chip", color.hex);
-    const status = state.excludedColors.has(index) ? "사용 안 함" : `${counts[index].toLocaleString("ko-KR")}개`;
+    const status = state.excludedColors.has(index) ? "disabled" : `${counts[index].toLocaleString("en-US")} beads`;
     chip.disabled = counts[index] === 0 && !state.excludedColors.has(index);
     chip.innerHTML = `<i></i><span>${color.name}</span><b>${status}</b>`;
-    chip.setAttribute("aria-label", chip.disabled
-      ? `${color.name}, 0개, 편집할 수 없음`
-      : `${color.name}, ${status}, 색상 편집`);
+    chip.setAttribute("aria-label", `${color.name}, ${status}`);
     chip.addEventListener("click", () => openColorDialog(index, counts[index]));
     els.counts.append(chip);
   });
@@ -626,10 +594,10 @@ function openColorDialog(index, count) {
   const color = PALETTE[index];
   const excluded = state.excludedColors.has(index);
   state.dialogColor = index;
-  els.colorDialogTitle.textContent = `${color.name} 색상 편집`;
+  els.colorDialogTitle.textContent = `${color.name} color edit`;
   els.colorDialogDescription.textContent = excluded
-    ? `${color.name}은(는) 현재 도안에서 사용하지 않는 색상입니다.`
-    : `도안에 있는 ${color.name} ${count.toLocaleString("ko-KR")}개를 다른 색상으로 한 번에 바꿀 수 있습니다.`;
+    ? `${color.name} is currently disabled for this pattern.`
+    : `Replace the ${count.toLocaleString("en-US")} ${color.name} beads with another color.`;
   els.colorDialogOptions.replaceChildren();
 
   PALETTE.forEach((option, optionIndex) => {
@@ -640,8 +608,8 @@ function openColorDialog(index, count) {
     button.className = "color-option";
     button.classList.toggle("is-current", isCurrent);
     button.style.setProperty("--option", option.hex);
-    button.innerHTML = `<i></i><span>${option.name}</span>${isCurrent ? "<small>현재 색상</small>" : ""}`;
-    button.setAttribute("aria-label", isCurrent ? `${option.name}, 현재 색상 유지` : `${option.name}(으)로 변경`);
+    button.innerHTML = `<i></i><span>${option.name}</span>${isCurrent ? "<small>current</small>" : ""}`;
+    button.setAttribute("aria-label", isCurrent ? `${option.name}, current color` : `${option.name}, replace with this color`);
     if (isCurrent) button.setAttribute("aria-current", "true");
     button.addEventListener("click", () => {
       if (isCurrent) closeColorDialog();
@@ -651,7 +619,7 @@ function openColorDialog(index, count) {
   });
 
   els.colorDialogOptions.hidden = excluded;
-  els.colorToggleBtn.textContent = excluded ? "이 색상 다시 사용하기" : "이 색상 사용하지 않음";
+  els.colorToggleBtn.textContent = excluded ? "Enable this color" : "Disable this color";
   els.colorToggleBtn.classList.toggle("is-restore", excluded);
   els.colorDialog.showModal();
 }
@@ -680,7 +648,7 @@ function toggleDialogColor() {
   if (colorIndex === null) return;
   const excluding = !state.excludedColors.has(colorIndex);
   if (excluding && state.excludedColors.size >= PALETTE.length - 1) {
-    showError("최소 한 가지 색상은 사용해야 합니다.");
+    showError("At least one color must stay available.");
     closeColorDialog();
     return;
   }
@@ -763,12 +731,12 @@ function instructionText() {
   const beadMm = Number(els.beadSize.value);
   const actualRows = state.rows + 1;
   const header = [
-    "비즈발 작업지시서",
-    `원본: ${state.sourceName}`,
-    `구슬: ${formatNumber(beadMm)}mm / 도안: ${state.cols} × ${actualRows}칸`,
-    `완성 크기: 약 ${formatNumber(state.cols * beadMm / 10)} × ${formatNumber(actualRows * beadMm / 10)}cm`,
-    `고정 구슬: 최상단 각 라인 1개 / 총 ${state.cols}개`,
-    "구슬 순서: 아래 → 위 (마지막은 고정 구슬)",
+    "Bizbal bead-curtain instructions",
+    `Source: ${state.sourceName}`,
+    `Bead size: ${formatNumber(beadMm)} mm / Pattern: ${state.cols} x ${actualRows} beads`,
+    `Actual size: ${formatNumber(state.cols * beadMm / 10)} x ${formatNumber(actualRows * beadMm / 10)} cm`,
+    `Fixed beads: 1 top row / ${state.cols} total`,
+    "Build the curtain from bottom to top, with the fixed row at the very end.",
     ""
   ];
   const lines = Array.from({ length: state.cols }, (_, col) => {
@@ -804,28 +772,26 @@ function saveProject() {
   const blob = new Blob([JSON.stringify(project)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
-  const baseName = (state.sourceName || "비즈발-도안").replace(/\.[^.]+$/, "").replace(/[\\/:*?\"<>|]/g, "-");
+  const baseName = (state.sourceName || "bizbal-pattern").replace(/\.[^.]+$/, "").replace(/[\\/:*?\"<>|]/g, "-");
   link.href = url;
   link.download = `${baseName}.beads.json`;
   document.body.append(link);
   link.click();
   link.remove();
   URL.revokeObjectURL(url);
-  flashButton(els.saveBtn, "저장 완료 ✓");
+  flashButton(els.saveBtn, "Saved");
 }
 
 async function loadProjectFile(event) {
   const [file] = event.target.files;
   if (!file) return;
   try {
-    if (file.size > 50 * 1024 * 1024) throw new Error("프로젝트 파일은 50MB 이하만 불러올 수 있습니다.");
+    if (file.size > 50 * 1024 * 1024) throw new Error("Project files must be smaller than 50 MB.");
     const project = JSON.parse(await file.text());
     validateProject(project);
     const { grid, settings } = project;
     const isLegacyProject = project.version === 1;
-    const convertColors = values => isLegacyProject
-      ? values.map(value => LEGACY_PALETTE_INDEX_MAP[value])
-      : values;
+    const convertColors = values => isLegacyProject ? values.map(value => LEGACY_PALETTE_INDEX_MAP[value]) : values;
     state.cols = grid.cols;
     state.rows = grid.rows;
     state.cells = Uint8Array.from(convertColors(grid.cells));
@@ -835,9 +801,7 @@ async function loadProjectFile(event) {
     state.undoStack = [];
     state.excludedColors = new Set(convertColors(settings.excludedColors || []));
     const savedSelectedColor = Math.max(0, Number(settings.selectedColor) || 0);
-    state.selectedColor = isLegacyProject
-      ? LEGACY_PALETTE_INDEX_MAP[savedSelectedColor]
-      : Math.min(PALETTE.length - 1, savedSelectedColor);
+    state.selectedColor = isLegacyProject ? LEGACY_PALETTE_INDEX_MAP[savedSelectedColor] : Math.min(PALETTE.length - 1, savedSelectedColor);
     els.beadSize.value = settings.beadMm;
     els.curtainWidth.value = settings.curtainWidthCm;
     const minimumCellSize = getMinimumCellSize(Number(settings.curtainWidthCm));
@@ -845,7 +809,7 @@ async function loadProjectFile(event) {
     state.cellSize = Math.min(24, Math.max(minimumCellSize, Number(settings.zoom) || 12));
     els.zoom.value = state.cellSize;
     els.zoomValue.value = `${state.cellSize}px`;
-    els.fileLabel.textContent = `${state.sourceName} · 저장 프로젝트`;
+    els.fileLabel.textContent = `${state.sourceName} loaded project`;
     els.generateBtn.disabled = !state.sourceImage;
     els.undoBtn.disabled = true;
     updatePaletteAvailability();
@@ -853,11 +817,11 @@ async function loadProjectFile(event) {
     hideError();
     els.workspace.hidden = false;
     updateAllOutputs();
-    els.inputSummary.textContent = `저장된 프로젝트 · ${state.cols} × ${state.rows + 1}칸 · 최상단 고정 구슬 포함`;
+    els.inputSummary.textContent = `Loaded project: ${state.cols} x ${state.rows + 1} beads, including the fixed row.`;
     requestAnimationFrame(() => els.workspace.scrollIntoView({ behavior: "smooth", block: "start" }));
-    flashButton(els.loadBtn, "불러오기 완료 ✓");
+    flashButton(els.loadBtn, "Loaded");
   } catch (error) {
-    showError(error.message || "프로젝트 파일을 불러올 수 없습니다.");
+    showError(error.message || "The project file could not be loaded.");
   } finally {
     event.target.value = "";
   }
@@ -874,13 +838,13 @@ function serializeSourceImage() {
   imageCtx.fillStyle = "#ffffff";
   imageCtx.fillRect(0, 0, canvas.width, canvas.height);
   imageCtx.drawImage(state.sourceImage, 0, 0, canvas.width, canvas.height);
-  return canvas.toDataURL("image/jpeg", .9);
+  return canvas.toDataURL("image/jpeg", 0.9);
 }
 
 async function restoreSourceImage(dataUrl) {
   if (!dataUrl) return null;
   if (typeof dataUrl !== "string" || !dataUrl.startsWith("data:image/jpeg;base64,")) {
-    throw new Error("프로젝트의 원본 이미지 데이터가 올바르지 않습니다.");
+    throw new Error("The project image data is not valid.");
   }
   const image = new Image();
   image.src = dataUrl;
@@ -890,38 +854,38 @@ async function restoreSourceImage(dataUrl) {
 
 function validateProject(project) {
   if (!project || project.type !== "bead-curtain-project" || ![1, 2].includes(project.version)) {
-    throw new Error("지원하지 않는 프로젝트 파일입니다.");
+    throw new Error("Unsupported project file.");
   }
   const { grid, settings } = project;
   const projectPaletteLength = project.version === 1 ? LEGACY_PALETTE_INDEX_MAP.length : PALETTE.length;
   if (!grid || !Number.isInteger(grid.cols) || !Number.isInteger(grid.rows) || grid.cols < 1 || grid.rows < 1) {
-    throw new Error("프로젝트의 그리드 정보가 올바르지 않습니다.");
+    throw new Error("The project grid is invalid.");
   }
   if (grid.cols * grid.rows > 300000 || !Array.isArray(grid.cells) || grid.cells.length !== grid.cols * grid.rows) {
-    throw new Error("프로젝트의 구슬 데이터가 올바르지 않습니다.");
+    throw new Error("The project cell data is invalid.");
   }
   if (grid.cells.some(value => !Number.isInteger(value) || value < 0 || value >= projectPaletteLength)) {
-    throw new Error("프로젝트에 알 수 없는 색상이 포함되어 있습니다.");
+    throw new Error("The project contains an invalid color index.");
   }
   if (grid.originalCells && (!Array.isArray(grid.originalCells) || grid.originalCells.length !== grid.cells.length)) {
-    throw new Error("프로젝트의 원본 도안 데이터가 올바르지 않습니다.");
+    throw new Error("The project original grid is invalid.");
   }
   if (grid.originalCells?.some(value => !Number.isInteger(value) || value < 0 || value >= projectPaletteLength)) {
-    throw new Error("프로젝트 원본에 알 수 없는 색상이 포함되어 있습니다.");
+    throw new Error("The project original grid contains an invalid color index.");
   }
   if (!settings || !BEAD_SIZES.includes(Number(settings.beadMm)) || !CURTAIN_WIDTHS.includes(Number(settings.curtainWidthCm))) {
-    throw new Error("프로젝트의 크기 설정이 올바르지 않습니다.");
+    throw new Error("The project settings are invalid.");
   }
   if (settings.selectedColor !== undefined
     && (!Number.isInteger(Number(settings.selectedColor))
       || Number(settings.selectedColor) < 0
       || Number(settings.selectedColor) >= projectPaletteLength)) {
-    throw new Error("프로젝트의 선택 색상 설정이 올바르지 않습니다.");
+    throw new Error("The selected color is invalid.");
   }
   if (settings.excludedColors && (!Array.isArray(settings.excludedColors)
     || settings.excludedColors.some(value => !Number.isInteger(value) || value < 0 || value >= projectPaletteLength)
     || new Set(settings.excludedColors).size >= projectPaletteLength)) {
-    throw new Error("프로젝트의 미사용 색상 설정이 올바르지 않습니다.");
+    throw new Error("The excluded-color list is invalid.");
   }
 }
 
@@ -934,10 +898,8 @@ function flashButton(button, message) {
 async function copyInstructions() {
   try {
     await navigator.clipboard.writeText(instructionText());
-    const oldText = els.copyBtn.textContent;
-    els.copyBtn.textContent = "복사 완료 ✓";
-    setTimeout(() => { els.copyBtn.textContent = oldText; }, 1400);
-  } catch (error) {
+    flashButton(els.copyBtn, "Copied");
+  } catch {
     const textarea = document.createElement("textarea");
     textarea.value = instructionText();
     document.body.append(textarea);
@@ -958,7 +920,7 @@ function hideError() {
 }
 
 function formatNumber(value) {
-  return Number(value.toFixed(1)).toLocaleString("ko-KR");
+  return Number(value.toFixed(1)).toLocaleString("en-US");
 }
 
 function arraysEqual(a, b) {
@@ -976,13 +938,13 @@ function rgbToLab(r, g, b) {
   let red = r / 255;
   let green = g / 255;
   let blue = b / 255;
-  red = red > .04045 ? Math.pow((red + .055) / 1.055, 2.4) : red / 12.92;
-  green = green > .04045 ? Math.pow((green + .055) / 1.055, 2.4) : green / 12.92;
-  blue = blue > .04045 ? Math.pow((blue + .055) / 1.055, 2.4) : blue / 12.92;
-  let x = (red * .4124 + green * .3576 + blue * .1805) / .95047;
-  let y = (red * .2126 + green * .7152 + blue * .0722);
-  let z = (red * .0193 + green * .1192 + blue * .9505) / 1.08883;
-  const pivot = value => value > .008856 ? Math.cbrt(value) : 7.787 * value + 16 / 116;
+  red = red > 0.04045 ? Math.pow((red + 0.055) / 1.055, 2.4) : red / 12.92;
+  green = green > 0.04045 ? Math.pow((green + 0.055) / 1.055, 2.4) : green / 12.92;
+  blue = blue > 0.04045 ? Math.pow((blue + 0.055) / 1.055, 2.4) : blue / 12.92;
+  let x = (red * 0.4124 + green * 0.3576 + blue * 0.1805) / 0.95047;
+  let y = (red * 0.2126 + green * 0.7152 + blue * 0.0722);
+  let z = (red * 0.0193 + green * 0.1192 + blue * 0.9505) / 1.08883;
+  const pivot = value => value > 0.008856 ? Math.cbrt(value) : 7.787 * value + 16 / 116;
   x = pivot(x); y = pivot(y); z = pivot(z);
   return { l: 116 * y - 16, a: 500 * (x - y), b: 200 * (y - z) };
 }
