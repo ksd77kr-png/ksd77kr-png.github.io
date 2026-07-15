@@ -187,6 +187,70 @@ p {
   gap: 0.35rem;
 }
 
+.nav-group {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-group > summary {
+  list-style: none;
+  padding: 0.68rem 0.85rem;
+  border: 1px solid transparent;
+  border-radius: 0.45rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+
+.nav-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-group > summary:hover,
+.nav-group[open] > summary,
+.nav-group > summary:focus-visible {
+  border-color: var(--line-strong);
+  background: rgba(42, 136, 174, 0.08);
+  color: var(--text);
+  outline: none;
+}
+
+.nav-group-menu {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  display: grid;
+  min-width: 10rem;
+  padding: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 0.55rem;
+  background: rgba(255, 252, 247, 0.98);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-0.25rem);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+.nav-group[open] .nav-group-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-group-menu a {
+  padding: 0.55rem 0.65rem;
+  border-radius: 0.4rem;
+  color: var(--muted);
+}
+
+.nav-group-menu a:hover,
+.nav-group-menu a:focus-visible {
+  background: rgba(42, 136, 174, 0.08);
+  color: var(--text);
+  outline: none;
+}
+
 .site-nav a {
   padding: 0.68rem 0.85rem;
   border: 1px solid transparent;
@@ -625,6 +689,24 @@ main {
     width: 100%;
   }
 
+  .nav-group {
+    width: 100%;
+  }
+
+  .nav-group > summary {
+    width: 100%;
+  }
+
+  .nav-group-menu {
+    position: static;
+    min-width: 0;
+    margin-top: 0.35rem;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    box-shadow: none;
+  }
+
   .studio-frame iframe {
     min-height: 760px;
   }
@@ -633,4 +715,3 @@ main {
     flex-direction: column;
   }
 }
-
